@@ -1,0 +1,19 @@
+{
+
+    "manifest_version": 2,
+    "name": "Github Translator",
+    "version": "1.0",
+  
+    "description": "Translats the GitHub.",
+  
+    "content_scripts": [
+      {
+        "matches": ["*://github.com/*"],
+        "js": ["translate.js"]
+      }
+    ],
+    "permissions": [
+      "*://*.github.com/*"
+    ]
+  
+  }
