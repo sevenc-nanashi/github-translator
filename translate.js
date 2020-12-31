@@ -160,10 +160,10 @@ function translate_dashboard() {
         }
     });
 
-    Array.from(document.getElementsByTagName("relative-time")).forEach((e) => {
+    Array.from(document.getElementsByTagName("relative-time"))+Array.from(document.getElementsByTagName("time-ago")).forEach((e) => {
 
         try {
-            e.innerHTML = e.innerHTML.replace(" hours ago", "時間前").replace(" days ago", "日前").replace("yesterday", "昨日")
+            e.innerHTML = e.innerHTML.replace(/ minutes? ago/, "分前").replace(/ hours? ago/, "時間前").replace(/ days? ago/, "日前").replace("yesterday", "昨日")
             if (~e.innerHTML.includes('on ')) {
                 ary = e.innerHTML.match(/on (\d*) (.*)/)
                 e.innerHTML = months.indexOf(ary[2]) + "月" + ary[1] + "日"
